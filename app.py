@@ -11,5 +11,16 @@ def index():
     """Return homepage."""
     return render_template('home.html', msg='Homepage')
 
+collections = [
+    { 'title': 'Causual', 'description': 'Bracelets for everyday, casual wear.' },
+    { 'title': 'Sale', 'description': 'Bracelets on sale!' }
+]
+
+@app.route('/')
+def collections_index():
+    """Show all items in collection"""
+    return render_template('collections_index.html', collections=collections)
+
+
 if __name__ == '__main__':
     app.run(debug=True)
