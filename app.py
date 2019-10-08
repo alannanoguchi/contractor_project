@@ -36,6 +36,10 @@ def new_items_page():
     return render_template('new.html')
 
     
+@app.route('/sale')
+def sale_page():
+    """Takes user to sale items page"""
+    return render_template('sale.html')
 
 
 if __name__ == '__main__':

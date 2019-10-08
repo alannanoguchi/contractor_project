@@ -1,0 +1,19 @@
+<!-- templates/sale.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<form method='POST' action='/sale'>
+    <fieldset>
+    <legend>Sale Items</legend>
+    <!-- TITLE -->
+    <p>
+        <label for='title'>Collections</label><br>
+        <input type='text' name='title' />
+    </p>
+    <p>
+        <label for='description'>Description</label><br>
+        <input type='text' name='description' />
+    </p>
+    </fieldset>
+</form>
+{% endblock %}
