@@ -1,13 +1,13 @@
-<!-- templates/collections.html -->
+<!-- templates/new.html -->
 {% extends 'base.html' %}
 
 {% block content %}
 <form method='POST' action='/collections'>
     <fieldset>
-    <legend>Collections</legend>
+    <legend>New</legend>
     <!-- TITLE -->
     <p>
-        <label for='title'>Collections</label><br>
+        <label for='title'>New Items</label><br>
         <input type='text' name='title' />
     </p>
     <p>
@@ -15,10 +15,5 @@
         <input type='text' name='description' />
     </p>
     </fieldset>
-
-    <!-- BUTTON -->
-    <p>
-        <button type='submit'>Checkout</button>
-    </p>
 </form>
 {% endblock %}

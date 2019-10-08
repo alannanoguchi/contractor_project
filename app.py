@@ -29,6 +29,12 @@ def collections_page():
     """Takes user to collections"""
     return render_template('collections.html')
 
+
+@app.route('/new')
+def new_items_page():
+    """Takes user to new items page"""
+    return render_template('new.html')
+
     
 
 
