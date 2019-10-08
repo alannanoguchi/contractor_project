@@ -9,7 +9,7 @@ contractor = db.contractor
 @app.route('/')
 def index():
     """Return homepage."""
-    return render_template('home.html', msg='Homepage')
+    return render_template('home.html', msg="Lanilulu's Bracelets")
 
 
 @app.route('/')
