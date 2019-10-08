@@ -42,5 +42,11 @@ def sale_page():
     return render_template('sale.html')
 
 
+@app.route('/casual')
+def casual_items_page():
+    """Takes user to casual items page"""
+    return render_template('casual.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)

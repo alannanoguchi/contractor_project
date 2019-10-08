@@ -1,0 +1,20 @@
+<!-- templates/casual.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<form method='POST' action='/casual'>
+    <fieldset>
+    <legend>Casual</legend>
+    <!-- TITLE -->
+    <p>
+        <label for='title'>Collections</label><br>
+        <input type='text' name='title' />
+    </p>
+    <p>
+        <label for='description'>Description</label><br>
+        <input type='text' name='description' />
+    </p>
+    </fieldset>
+
+</form>
+{% endblock %}
