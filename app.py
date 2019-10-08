@@ -16,11 +16,20 @@ def index():
 def collections_index():
     """Show all items in collection"""
     return render_template('collections_index.html', collections=collections.find())
+    
 
-@app.route('/collections/casual')
-def playlists_new():
-    """Takes user to Casual bracelet's"""
-    return render_template('collections_casual.html')
+@app.route('/cart')
+def cart_new():
+    """Takes user to view the cart"""
+    return render_template('cart.html')
+
+
+@app.route('/collections')
+def collections_page():
+    """Takes user to collections"""
+    return render_template('collections.html')
+
+    
 
 
 if __name__ == '__main__':

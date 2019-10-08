@@ -1,13 +1,13 @@
-<!-- templates/playlists_new.html -->
+<!-- templates/cart.html -->
 {% extends 'base.html' %}
 
 {% block content %}
-<form method='POST' action='/playlists'>
+<form method='POST' action='/cart'>
     <fieldset>
     <legend>Casual</legend>
     <!-- TITLE -->
     <p>
-        <label for='title'>Casual</label><br>
+        <label for='title'>Cart</label><br>
         <input type='text' name='title' />
     </p>
     <p>
@@ -18,7 +18,7 @@
 
     <!-- BUTTON -->
     <p>
-        <button type='submit'>Add to Cart</button>
+        <button type='submit'>Checkout</button>
     </p>
 </form>
 {% endblock %}
