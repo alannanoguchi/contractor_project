@@ -3,6 +3,9 @@
 
 {% block content %}
     <h1>Collections</h1>
+
+    <a href='/collections/casual'>Casual Bracelets</a>
+
     {% for collections in collections %}
         <h2>{{ collections.title }}</h2>
         <small>{{ collections.description }}</small>

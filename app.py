@@ -1,8 +1,8 @@
 from flask import Flask, render_template
-from pymongo import MangoClient
+from pymongo import MongoClient
 
 app = Flask(__name__)
-client = MangoClient()
+client = MongoClient()
 db = client.Contractor
 contractor = db.contractor
 
@@ -16,6 +16,11 @@ def index():
 def collections_index():
     """Show all items in collection"""
     return render_template('collections_index.html', collections=collections.find())
+
+@app.route('/collections/casual')
+def playlists_new():
+    """Takes user to Casual bracelet's"""
+    return render_template('collections_casual.html')
 
 
 if __name__ == '__main__':
