@@ -2,18 +2,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method='POST' action='/sale'>
-    <fieldset>
-    <legend>Sale Items</legend>
-    <!-- TITLE -->
-    <p>
-        <label for='title'>Collections</label><br>
-        <input type='text' name='title' />
-    </p>
-    <p>
-        <label for='description'>Description</label><br>
-        <input type='text' name='description' />
-    </p>
-    </fieldset>
-</form>
+<div class="container p-3"></div>
+    <div class="row">
+            <div class="card text-white bg-primary mt-md-4" style="max-width: 20rem;">
+                <div class = "col">
+                <div class="card-header">First Edition 1.0</div>
+                    <div class="card-body">
+                        <img src="https://cdn-images.farfetch-contents.com/13/02/81/44/13028144_13995253_480.jpg" class="rounded" width="200" height="200">
+                        <p class="card-text">Exclusive design and color</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card text-white bg-info mt-md-4" style="max-width: 20rem;">
+                <div class = "col">
+                <div class="card-header">First Edition 2.0</div>
+                    <div class="card-body">
+                        <img src="https://theyogamandala.com/wp-content/uploads/2017/05/adjustable-white-howlite-lava-stone-bracelet.jpg" class="rounded" width="200" height="200">
+                        <p class="card-text">A great black and white piece to add to your collection</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card text-white bg-warning mt-md-4" style="max-width: 20rem;">
+            <div class = "col">
+                <div class="card-header">First Edition 3.0</div>
+                    <div class="card-body">
+                        <img src="https://cdn.shopify.com/s/files/1/2260/1301/products/7-chakra-healing-beads-and-lava-stone-balance-bracelet-for-men-women-24642946578_1024x1024.jpg?v=1552872916" class="rounded" width="200" height="200">
+                        <p class="card-text">One of the most popular itemsis back for a short time</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
