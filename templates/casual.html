@@ -2,19 +2,34 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method='POST' action='/casual'>
-    <fieldset>
-    <legend>Casual</legend>
-    <!-- TITLE -->
-    <p>
-        <label for='title'>Collections</label><br>
-        <input type='text' name='title' />
-    </p>
-    <p>
-        <label for='description'>Description</label><br>
-        <input type='text' name='description' />
-    </p>
-    </fieldset>
-
-</form>
+<div class="container p-3">
+        <div class="row">
+            <div class="card text-white bg-primary mt-md-4" style="max-width: 20rem;">
+                <div class = "col">
+                <div class="card-header">Simple 1.0</div>
+                    <div class="card-body">
+                        <img src="https://img.davidyurman.com/is/image/DavidYurmanNew/B14711-SRAMO_ALT1?$3651pdp_mobile$" class="rounded" width="200" height="200">
+                        <p class="card-text">The new simple collection.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card text-white bg-info mt-md-4" style="max-width: 20rem;">
+                <div class = "col">
+                <div class="card-header">Simple 2.0</div>
+                    <div class="card-body">
+                        <img src="http://www.rings-things.com/51-770-01-1" class="rounded" width="200" height="200">
+                        <p class="card-text">Naked wrist? Add this simple piece</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card text-white bg-warning mt-md-4" style="max-width: 20rem;">
+            <div class = "col">
+                <div class="card-header">Simple 3.0</div>
+                    <div class="card-body">
+                        <img src="https://triwa.centracdn.net/client/dynamic/images/1928_d61a5f51fb-bracelet-stampd-01-aw16-med.jpg" class="rounded" width="200" height="200">
+                        <p class="card-text">This is a great choice for any occassion </p>
+                    </div>
+                </div>
+            </div>
+        </div>
 {% endblock %}
