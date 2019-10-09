@@ -2,18 +2,35 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method='POST' action='/new'>
-    <fieldset>
-    <legend>New</legend>
-    <!-- TITLE -->
-    <p>
-        <label for='title'>New Items</label><br>
-        <input type='text' name='title' />
-    </p>
-    <p>
-        <label for='description'>Description</label><br>
-        <input type='text' name='description' />
-    </p>
-    </fieldset>
-</form>
+<div class="container p-3">
+        <div class="row">
+            <div class="card text-white bg-primary mt-md-4" style="max-width: 20rem;">
+                <div class = "col">
+                <div class="card-header">Everyday 1.0</div>
+                    <div class="card-body">
+                        <img src="https://moda4life.com/wp-content/uploads/2019/01/deri-bileklik.jpg" class="rounded" width="200" height="200">
+                        <p class="card-text">Simple for that everyday look</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card text-white bg-info mt-md-4" style="max-width: 20rem;">
+                <div class = "col">
+                <div class="card-header">Everyday 2.0</div>
+                    <div class="card-body">
+                        <img src="https://ae01.alicdn.com/kf/HTB1NT8MRFXXXXX2XFXXq6xXFXXXg/Multilayers-Electroplate-Silver-elegant-top-quality-Bracelets-for-women-Simple-casual-style-fashion-jewelry-Bracelets.jpg_640x640.jpg" class="rounded" width="200" height="200">
+                        <p class="card-text">Perfect accessory for going out</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card text-white bg-warning mt-md-4" style="max-width: 20rem;">
+                <div class = "col">
+                <div class="card-header">Everyday 3.0</div>
+                    <div class="card-body">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxb30dvvyPY9xiCmj0VgNaGaxd3KzERoomHX3aco883nJE8Tvl" class="rounded" width="200" height="200">
+                        <p class="card-text">The perfect mix between our Everyday 1.0 and Everyday 2.0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
