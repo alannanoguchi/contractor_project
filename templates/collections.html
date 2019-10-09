@@ -2,19 +2,140 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form method='POST' action='/collections'>
-    <fieldset>
-    <legend>Collections</legend>
-    <!-- TITLE -->
-    <p>
-        <label for='title'>Collections</label><br>
-        <input type='text' name='title' />
-    </p>
-    <p>
-        <label for='description'>Description</label><br>
-        <input type='text' name='description' />
-    </p>
-    </fieldset>
+<div class="container p-3">
+    <div class="row">
+        <div class="card text-white bg-primary mt-md-4" style="max-width: 20rem;">
+            <div class = "col">
+            <div class="card-header">Everyday 1.0</div>
+                <div class="card-body">
+                    <img src="https://moda4life.com/wp-content/uploads/2019/01/deri-bileklik.jpg" class="rounded" width="200" height="200">
+                    <p class="card-text">Simple for that everyday look</p>
+                </div>
+            </div>
+        </div>
+        <div class="card text-white bg-info mt-md-4" style="max-width: 20rem;">
+            <div class = "col">
+            <div class="card-header">Everyday 2.0</div>
+                <div class="card-body">
+                    <img src="https://ae01.alicdn.com/kf/HTB1NT8MRFXXXXX2XFXXq6xXFXXXg/Multilayers-Electroplate-Silver-elegant-top-quality-Bracelets-for-women-Simple-casual-style-fashion-jewelry-Bracelets.jpg_640x640.jpg" class="rounded" width="200" height="200">
+                    <p class="card-text">Perfect accessory for going out</p>
+                </div>
+            </div>
+        </div>
+        <div class="card text-white bg-warning mt-md-4" style="max-width: 20rem;">
+        <div class = "col">
+            <div class="card-header">Everyday 3.0</div>
+                <div class="card-body">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxb30dvvyPY9xiCmj0VgNaGaxd3KzERoomHX3aco883nJE8Tvl" class="rounded" width="200" height="200">
+                    <p class="card-text">The perfect mix between our Everyday 1.0 and Everyday 2.0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+        <div class="card text-white bg-primary mt-md-4" style="max-width: 20rem;">
+            <div class = "col">
+            <div class="card-header">Simple 1.0</div>
+                <div class="card-body">
+                    <img src="https://img.davidyurman.com/is/image/DavidYurmanNew/B14711-SRAMO_ALT1?$3651pdp_mobile$" class="rounded" width="200" height="200">
+                    <p class="card-text">Simple for that everyday look</p>
+                </div>
+            </div>
+        </div>
+        <div class="card text-white bg-info mt-md-4" style="max-width: 20rem;">
+            <div class = "col">
+            <div class="card-header">Simple 2.0</div>
+                <div class="card-body">
+                    <img src="http://www.rings-things.com/51-770-01-1" class="rounded" width="200" height="200">
+                    <p class="card-text">Perfect accessory for going out</p>
+                </div>
+            </div>
+        </div>
+        <div class="card text-white bg-warning mt-md-4" style="max-width: 20rem;">
+        <div class = "col">
+            <div class="card-header">Simple 3.0</div>
+                <div class="card-body">
+                    <img src="data:image/jpeg;base64,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" class="rounded" width="200" height="200">
+                    <p class="card-text">The perfect mix between our Everyday 1.0 and Everyday 2.0</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="row">
+            <div class="card text-white bg-primary mt-md-4" style="max-width: 20rem;">
+                <div class = "col">
+                <div class="card-header">Everyday 1.0</div>
+                    <div class="card-body">
+                        <img src="https://moda4life.com/wp-content/uploads/2019/01/deri-bileklik.jpg" class="rounded" width="200" height="200">
+                        <p class="card-text">Simple for that everyday look</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card text-white bg-info mt-md-4" style="max-width: 20rem;">
+                <div class = "col">
+                <div class="card-header">Everyday 2.0</div>
+                    <div class="card-body">
+                        <img src="https://ae01.alicdn.com/kf/HTB1NT8MRFXXXXX2XFXXq6xXFXXXg/Multilayers-Electroplate-Silver-elegant-top-quality-Bracelets-for-women-Simple-casual-style-fashion-jewelry-Bracelets.jpg_640x640.jpg" class="rounded" width="200" height="200">
+                        <p class="card-text">Perfect accessory for going out</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card text-white bg-warning mt-md-4" style="max-width: 20rem;">
+            <div class = "col">
+                <div class="card-header">Everyday 3.0</div>
+                    <div class="card-body">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxb30dvvyPY9xiCmj0VgNaGaxd3KzERoomHX3aco883nJE8Tvl" class="rounded" width="200" height="200">
+                        <p class="card-text">The perfect mix between our Everyday 1.0 and Everyday 2.0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+</div>
 
-</form>
+
+<!-- <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h4 class="card-title">Success card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card text-white bg-danger mb-3" style="max-width: 20rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h4 class="card-title">Danger card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card text-white bg-warning mb-3" style="max-width: 20rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h4 class="card-title">Warning card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card text-white bg-info mb-3" style="max-width: 20rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h4 class="card-title">Info card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card bg-light mb-3" style="max-width: 20rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h4 class="card-title">Light card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+<div class="card text-white bg-dark mb-3" style="max-width: 20rem;">
+  <div class="card-header">Header</div>
+  <div class="card-body">
+    <h4 class="card-title">Dark card title</h4>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div> --
 {% endblock %}
