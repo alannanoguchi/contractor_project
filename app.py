@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
+from bson.objectid import ObjectId
 
 app = Flask(__name__)
 client = MongoClient()
@@ -11,11 +12,16 @@ def index():
     """Return homepage."""
     return render_template('home.html', msg="Lanilulu's Bracelets")
 
+@app.route('/')
+def collections_index():
+    """Show all items in collection"""
+    return render_template('collections_index.html', items=items.find())
+
 
 @app.route('/collections', methods=['POST'])
 def item_submit():
     """Submit a new item."""
-    items = {
+    item = {
         "title": request.form.get("title"),
         "description": request.form.get("description")
     }
@@ -23,21 +29,18 @@ def item_submit():
     return redirect(url_for('inventory'))
 
 
-@app.route('/items', methods=['POST'])
-def playlists_submit():
-    """Submit a new item."""
-    item = {
-        'title': request.form.get('title'),
-        'description': request.form.get('description')
-    }
-    collections.insert_one(item)
-    return redirect(url_for('collections'))
+@app.route('/inventory/<item_id>')
+def item_show(item_id):
+    """Show a item."""
+    return f'My ID is {item_id}'
 
 
-@app.route('/')
-def collections_index():
-    """Show all items in collection"""
-    return render_template('collections_index.html', collections=collections.find())
+@app.route('/inventory/<item_id>/delete', methods=['POST'])
+def item_delete(item_id):
+    """Delete one item."""
+    item.delete_one({'_id': ObjectId(item_id)})
+    return redirect(url_for('inventory'))
+
     
 
 @app.route('/inventory')
