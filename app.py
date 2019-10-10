@@ -28,6 +28,7 @@ def items_submit():
     item = {
         'title': request.form.get('title'),
         'description': request.form.get('description'),
+        'price': request.form.get('price'),
         'image': request.form.get('image')
     }
     print(item)
@@ -56,14 +57,14 @@ def items_edit(item_id):
     item = items.find_one({'_id': ObjectId(item_id)})
     return render_template('items_edit.html', title='Edit Items', item = item)
 
-@app.route('/collections/<item_id>/edit', methods=['POST'])
+@app.route('/collections/<item_id>/edited', methods=['POST'])
 def items_update(item_id):
     """Submit an edited item."""
     updated_item = {
         'title': request.form.get('title'),
         'description': request.form.get('description'),
         'price': request.form.get('price'),
-        'image': request.form.get('image')
+        'image': request.form.get('images')
     }
     items.update_one(
         {'_id': ObjectId(item_id)},

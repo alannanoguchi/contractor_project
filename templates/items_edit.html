@@ -4,8 +4,7 @@
 {% block content %}
 <div class='row d-flex justify-content-center'>
     <div class='col-sm-6 col-sm-offset-3'>
-        <form method='POST' action='/collections/{{item._id}}/edit'>
-            <input type='hidden' name='_method' value='PUT'/>
+        <form method='POST' action='/collections/{{item._id}}/edited'>
             {% include 'partials/items_form.html' %}
             <!-- BUTTON -->
             <div class='form-group'>
