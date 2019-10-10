@@ -15,7 +15,7 @@ def index():
 @app.route('/')
 def collections_index():
     """Show all items in collection"""
-    return render_template('collections_index.html', items=items.find())
+    return render_template('collections_index.html', item=item.find())
 
 
 @app.route('/collections', methods=['POST'])
