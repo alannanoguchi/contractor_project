@@ -50,79 +50,35 @@ def items_show(item_id):
 
 
 
-@app.route('/inventory/new/<item_id>/edit')
+@app.route('/collections/<item_id>/edit')
 def items_edit(item_id):
-    """Show the edit form for a item."""
+    """Show the edit form for an item."""
     item = items.find_one({'_id': ObjectId(item_id)})
-    return render_template('items_edit.html', item=item, title='Edit Items')
+    return render_template('items_edit.html', title='Edit Items', item = item)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# @app.route('/collections', methods=['POST'])
-# def item_submit():
-#     """Submit a new item."""
-#     item = {
-#         "title": request.form.get("title"),
-#         "description": request.form.get("description")
-#     }
-#     print(request.form.to_dict())
-#     return redirect(url_for('inventory'))
-
-
-# @app.route('/inventory/<item_id>')
-# def item_show(item_id):
-#     """Show a item."""
-#     return f'My ID is {item_id}'
-
-
-# @app.route('/inventory/<item_id>/delete', methods=['POST'])
-# def item_delete(item_id):
-#     """Delete one item."""
-#     item.delete_one({'_id': ObjectId(item_id)})
-#     return redirect(url_for('inventory'))
-
+@app.route('/collections/<item_id>/edit', methods=['POST'])
+def items_update(item_id):
+    """Submit an edited item."""
+    updated_item = {
+        'title': request.form.get('title'),
+        'description': request.form.get('description'),
+        'price': request.form.get('price'),
+        'image': request.form.get('image')
+    }
+    items.update_one(
+        {'_id': ObjectId(item_id)},
+        {'$set': updated_item})
     
-
-# @app.route('/inventory')
-# def inventory_new():
-#     """Takes owner to inventory"""
-#     return render_template('inventory.html')
+    item = items.find_one({'_id': ObjectId(item_id)})["_id"]
+    return redirect(url_for('items_show', item_id=item))
 
 
-@app.route('/collections')
-def collections_page():
-    """Takes user to collections"""
-    return render_template('collections.html')
+@app.route('/collections/<item_id>/delete', methods=['POST'])
+def items_delete(item_id):
+    """Delete one item."""
+    items.remove({'_id': ObjectId(item_id)})
+    return redirect(url_for('collections_index'))
 
-
-@app.route('/new')
-def new_items_page():
-    """Takes user to new items page"""
-    return render_template('new.html')
-
-    
-@app.route('/sale')
-def sale_page():
-    """Takes user to sale items page"""
-    return render_template('sale.html')
-
-
-@app.route('/casual')
-def casual_items_page():
-    """Takes user to casual items page"""
-    return render_template('casual.html')
 
 
 if __name__ == '__main__':

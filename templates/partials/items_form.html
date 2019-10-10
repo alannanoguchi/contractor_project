@@ -13,12 +13,18 @@
             <label for='description'>Description</label><br>
             <input class='form-control' id='description' type='text' name='description' value='{{ item.description }}' />
         </div>
+
+         <!-- DESCRIPTION -->
+        <div class='form-group'>
+                <label for='price'>Price</label><br>
+                <input class='form-control' id='price' type='text' name='price' value='{{ item.price }}' />
+        </div>
     
         <!-- DESCRIPTION -->
         <div class='form-group'>
             <label for='items-image'>Image</label><br/>
             <p class='text-muted'>Add images in the form of image address. Separate with a newline.</p>
-            <textarea class='form-control' id='items-image' name='images' rows='10' />{{ "\n".join(item.images) }}</textarea>
+            <textarea class='form-control' id='items-image' name='images' rows='10' value='{{ item.image }}'></textarea>
         </div>
     </fieldset>
     

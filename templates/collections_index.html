@@ -5,7 +5,7 @@
     <h1>Collection</h1>
 
     {% for item in items %}
-        <h2>{{ item.title }}</h2>
+        <h2><a href = '/collections/{{item._id}}'>{{ item.title }}</a></h2>
         <small>{{ item.description }}</small>
         <img src="{{ item.image }}">
     {% endfor %}
