@@ -23,7 +23,7 @@ class InventoryTests(TestCase):
 
     def test_inventory(self):
         """Test the new playlist creation page."""
-        result = self.client.get('/inventory')
+        result = self.client.get('/inventory/new')
         self.assertEqual(result.status, '200 OK')
         self.assertIn(b'Inventory', result.data) 
 

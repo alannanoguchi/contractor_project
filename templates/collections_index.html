@@ -2,12 +2,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Collections</h1>
+    <h1>Collection</h1>
 
-    <a href='/inventory'>Inventory</a>
-
-    {% for item in item %}
+    {% for item in items %}
         <h2>{{ item.title }}</h2>
-        <small>{{ citem.description }}</small>
+        <small>{{ item.description }}</small>
+        <img src="{{ item.image }}">
     {% endfor %}
 {% endblock %}
