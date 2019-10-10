@@ -14,7 +14,6 @@ class InventoryTests(TestCase):
         app.config['TESTING'] = True
 
 
-
     def test_index(self):
         """Test the homepage."""
         result = self.client.get('/')
