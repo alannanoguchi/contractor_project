@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 
 app = Flask(__name__)
@@ -12,16 +12,38 @@ def index():
     return render_template('home.html', msg="Lanilulu's Bracelets")
 
 
+@app.route('/collections', methods=['POST'])
+def item_submit():
+    """Submit a new item."""
+    items = {
+        "title": request.form.get("title"),
+        "description": request.form.get("description")
+    }
+    print(request.form.to_dict())
+    return redirect(url_for('inventory'))
+
+
+@app.route('/items', methods=['POST'])
+def playlists_submit():
+    """Submit a new item."""
+    item = {
+        'title': request.form.get('title'),
+        'description': request.form.get('description')
+    }
+    collections.insert_one(item)
+    return redirect(url_for('collections'))
+
+
 @app.route('/')
 def collections_index():
     """Show all items in collection"""
     return render_template('collections_index.html', collections=collections.find())
     
 
-@app.route('/cart')
-def cart_new():
-    """Takes user to view the cart"""
-    return render_template('cart.html')
+@app.route('/inventory')
+def inventory_new():
+    """Takes owner to inventory"""
+    return render_template('inventory.html')
 
 
 @app.route('/collections')

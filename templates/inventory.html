@@ -1,0 +1,36 @@
+<!-- templates/cart.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<form method='POST' action='/inventory'>
+    <fieldset>
+    <legend>Inventory</legend>
+    <!-- TITLE -->
+    <p>
+        <label for='title'>Inventory</label><br>
+        <input type='text' name='title' />
+    </p>
+    <p>
+        <label for='description'>Description</label><br>
+        <input type='text' name='description' />
+    </p>
+    </fieldset>
+    <div class="form-group">
+            <label for="exampleSelect1">Update Quantity</label>
+            <select class="form-control" id="exampleSelect1">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+    </div>
+    <!-- BUTTON -->
+    <p>
+        <button type='submit'>Add</button>
+    </p>
+</form>
+
+{% endblock %}
+
+
