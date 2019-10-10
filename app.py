@@ -42,7 +42,6 @@ def inventory_new():
     return render_template('collections_new.html', item={}, title='New Collection')
 
 
-
 @app.route('/collections/<item_id>')
 def items_show(item_id):
     """Show a single collection."""
@@ -50,12 +49,12 @@ def items_show(item_id):
     return render_template('items_show.html', item=item)
 
 
-
 @app.route('/collections/<item_id>/edit')
 def items_edit(item_id):
     """Show the edit form for an item."""
     item = items.find_one({'_id': ObjectId(item_id)})
     return render_template('items_edit.html', title='Edit Items', item = item)
+    
 
 @app.route('/collections/<item_id>/edited', methods=['POST'])
 def items_update(item_id):

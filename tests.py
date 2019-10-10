@@ -18,14 +18,25 @@ class InventoryTests(TestCase):
         """Test the homepage."""
         result = self.client.get('/')
         self.assertEqual(result.status, '200 OK')
-        self.assertIn(b'Collections', result.data)   
+        self.assertIn(b'Collection', result.data)   
 
 
     def test_inventory(self):
-        """Test the new playlist creation page."""
+        """Test the add items creation page."""
         result = self.client.get('/inventory/new')
         self.assertEqual(result.status, '200 OK')
-        self.assertIn(b'Inventory', result.data) 
+        self.assertIn(b'New Items', result.data) 
+
+    
+    def test_collections(self):
+        """Test the Collections page"""
+        result = self.client.get('/collections')
+        self.assertEqual(result.status, '200 OK')
+        self.assertIn(b'Collection', result.data)       
+
+
+
+
 
 if __name__ == '__main__':
     unittest_main()
